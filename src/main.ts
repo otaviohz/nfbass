@@ -10,15 +10,15 @@ button.addEventListener("click", async () => {
   const synth = new Tone.Synth().toDestination();
 
   // Choose any scale
-  const notes = Scale.get("C major").notes.map(n => n + "4");
+  const notes = Scale.get("A major").notes.map(n => n + "4");
   console.log("Playing:", notes);
 
   // Play each note in sequence
   notes.forEach((note, i) => {
     synth.triggerAttackRelease(
       note,
-      "8n",
-      Tone.now() + i * .1,
+      "32n",
+      Tone.now() + i * .5,
     );
   });
 });
